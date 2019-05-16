@@ -1,0 +1,86 @@
+﻿body {
+}
+.than {
+    background-image: url('../Images/hinhnen2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.loaihoa
+{
+    color:#000000;
+}
+.dropdowbang{
+    text-align:left;
+}
+.loaihoa:hover{
+      background-color:Gainsboro;      
+      text-decoration:none;
+      color:black;
+      display:block;
+}
+.hoatan{
+    margin-top:-6px;
+}
+.hoa{
+    position: absolute;
+    width:160px;
+    color:black;
+}
+.hoa1{
+    position: absolute;
+    width:160px;
+    color:black;
+    margin-right:50px;
+}
+.center{
+    text-align:center;
+}
+.center-page{
+    width:300px;
+    height:300px;
+    position:absolute;
+
+    top:0px;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+}
+.chu{
+    font-size:20px;
+}
+.h1{
+    font-weight:bold;
+}
+.mater{
+    margin-top:10px;
+    height:40px;
+
+    }
+.footerhoa{
+    margin-top:10px;
+    height:40px;
+text-align:center;
+}
+.menudc{
+    margin-left:100px;
+}
+
+.btndangxuat{
+    margin-left:38px;
+}
+.bangmenu{
+width: 1380px;
+}
+.tintuc{
+    color:brown;
+}
+.tintuc:hover{
+    background-image:url('../Images/hinhdong.gif');
+    display: block;
+    text-decoration:none;
+    color:#170757;
+}
+.dttintuc{
+    background-color:white;
+}

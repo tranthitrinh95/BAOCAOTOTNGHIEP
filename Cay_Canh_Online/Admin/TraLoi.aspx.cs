@@ -1,0 +1,79 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Text.RegularExpressions;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Admin_TraLoi : System.Web.UI.Page
+{
+    XLDL x = new XLDL();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+            if (Session["AD"] == null)
+            {
+                Response.Redirect("~/Admin/DangNhap.aspx");
+            }
+            else
+            {
+                DataTable dt = x.getData("select MaBL, Email, PHANHOIBL.MaKH from PHANHOIBL, KHACHHANG where PHANHOIBL.MaKH = KHACHHANG.MaKH AND MaBL=" + Request.QueryString["MaBL"].ToString());
+                txtEmail.Text = dt.Rows[0][1].ToString();
+            }
+    }
+    private void SendMail()
+    {
+        var mail = new MailMessage();
+        mail.From = new MailAddress("quantrivien1011@gmail.com", "Vườn hoa kiểng Lê Tân");
+        mail.To.Add(txtEmail.Text);
+        mail.Subject = "Phản hồi bình luận từ vườn hoa kiểng Lê Tân";
+        mail.Body = Regex.Replace(ckeNoiDung.Text, @"[\[\]\\\^\$\.\|\?\*\+\(\)\{\}%,;><!@#&\-\+]", "").Trim();
+        ////mail.Body += "http://thegioitruyentranh.azurewebsites.net/XacNhanEmail.aspx?code=" + Session["rdnCode"] + "&tk=" + txtTK.Text;
+        var client = new SmtpClient("smtp.gmail.com", 587);
+        var auth = new NetworkCredential("quantrivien1011@gmail.com", "mykcjwpigtdndrsx");
+        client.EnableSsl = true;
+        client.Credentials = auth;
+        try
+        {
+            client.Send(mail);
+            Response.Redirect("~/Admin/PhanHoi.aspx");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        //string to = txtEmail.Text;
+        //int port = 587;
+        //string subject = txttieude.Text;
+        //string content = txtnoidung.Text;
+        //SmtpClient client = new SmtpClient();
+        //client.UseDefaultCredentials = true;
+        //client.EnableSsl = true;
+        //client.Port = port;
+        //client.Host = "smtp.gmail.com";
+        //client.Credentials = new NetworkCredential("vodanhtusi@gmail.com", "eubcvjvxnvrfisql");
+        //MailAddress from = new MailAddress("vodanhtusi@gmail.com", "eubcvjvxnvrfisql");
+        //MailAddress toAddress = new MailAddress(to);
+        //MailMessage message = new MailMessage(from, toAddress);
+        //message.Body = content;
+        //message.Subject = subject;
+        //try
+        //{
+        //    client.Send(message);
+        //    lbMessage.Text = "Send mail sucessfully!!!";
+        //}
+        //catch (Exception ex)
+        //{
+        //    lbMessage.Text = ex.Message;
+        //}
+    }
+
+    protected void btsend_ServerClick(object sender, EventArgs e)
+    {
+        SendMail();
+    }
+}

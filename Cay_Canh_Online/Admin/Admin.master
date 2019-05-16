@@ -1,0 +1,145 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="MAU_MANHINH_HOMEPAGE" %>
+<!DOCTYPE HTML>
+<html>
+<head runat="server">
+    <title>Vườn hoa kiểng Lê Tân</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="../Content/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+    <link href="../Content/style.css" rel='stylesheet' type='text/css' />
+    <!-- font CSS -->
+    <!-- font-awesome icons -->
+    <link href="../obajuCSS/css/font-awesome.css" type="text/css" rel="stylesheet" />
+    <!-- //font-awesome icons -->
+    <!-- js-->
+    <script src="../Scripts/jquery-1.11.1.min.js"></script>
+    <script src="../Scripts/modernizr.custom.js"></script>
+    <!--<script src="../Plugin/ckeditor/ckeditor.js"></script>-->
+    <!--webfonts-->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <!--//webfonts-->
+    <!--animate-->
+    <link href="../Content/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="../Scripts/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--//end-animate-->
+    <!-- Metis Menu -->
+    <script src="../Scripts/metisMenu.min.js"></script>
+    <script src="../Scripts/custom.js"></script>
+    <link href="../Content/custom.css" rel="stylesheet">
+    <!--//Metis Menu -->
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    </head>
+<body class="cbp-spmenu-push">
+    <div class="main-content">
+        <!--left-fixed -navigation-->
+        <div class=" sidebar" role="navigation">
+            <div class="navbar-collapse">
+                <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="SanPham.aspx"><i class="fa fa-bitbucket nav_icon"></i>Quản Lý Hoa Kiểng</a>
+                        </li>
+                         <li>
+                            <a href="PhanHoi.aspx"><i class="fa fa-mail-reply nav_icon"></i>Quản Lý Phản Hồi</a>
+                        </li>
+                        <li>
+                            <a href="TinTuc.aspx"><i class="fa fa-bookmark nav_icon"></i>Quản Lý Tin Tức</a>
+                        </li>
+                         <li>
+                            <a href="TaiKhoan.aspx"><i class="fa fa-user nav_icon"></i>Quản Lý Tài Khoản</a>
+                        </li>
+                        <li>
+                            <a href="KhachHang.aspx"><i class="fa fa-user-md nav_icon"></i>Quản Lý Khách Hàng</a>
+                        </li>
+                        <li>
+                            <a href="HoaDon.aspx"><i class="fa fa-bitcoin nav_icon"></i>Quản Lý Hóa Đơn</a>
+                            <!-- //nav-second-level -->
+                        </li>
+                     
+                        
+                    </ul>
+                    <div class="clearfix"> </div>
+                    <!-- //sidebar-collapse -->
+                </nav>
+            </div>
+        </div>
+        <!--left-fixed -navigation-->
+        <!-- header-starts -->
+        <div class="sticky-header header-section ">
+            <div class="header-left">
+                <!--toggle button start-->
+                <button id="showLeftPush" causesvalidation="false"><i class="fa fa-bars" runat="server"></i></button>
+                <!--toggle button end-->
+                <!--logo -->
+                <div class="logo">
+                    <a href="Admin.aspx">
+                        <h1>Vườn hoa kiểng Lê Tân</h1>
+                        <span>Trang quản trị</span>
+                    </a>
+                </div>
+                <!--//logo-->
+                <!--search-box-->
+                
+                <div class="clearfix"> </div>
+            </div>
+            <form runat="server">
+            <div class="header-right" >
+                <div class="profile_details" runat="server">
+                    <a href="DoiMatKhau.aspx"><asp:Label ID="lbtendn" runat="server" Text="Label"></asp:Label></a> &nbsp;
+                    &nbsp;
+                    <asp:LinkButton ID="Link"  runat="server"  CausesValidation="false" OnClick="Link_Click">Đăng Xuất</asp:LinkButton>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+                
+            <div class="clearfix"> </div>
+        </div>
+        <!-- //header-ends -->
+        <!-- main content start-->
+            <div id="page-wrapper" style="overflow: inherit;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+		</div>
+        </form>
+        <!--footer-->
+        <div class="footer">
+            <p>&nbsp;Design by Team D15HT02</p>
+        </div>
+        <!--//footer-->
+    </div>
+    
+    <!-- Classie -->
+    <script src="../Scripts/classie.js"></script>
+    <script>
+        var menuLeft = document.getElementById('cbp-spmenu-s1'),
+            showLeftPush = document.getElementById('showLeftPush'),
+            body = document.body;
+
+        showLeftPush.onclick = function () {
+            classie.toggle(this, 'active');
+            classie.toggle(body, 'cbp-spmenu-push-toright');
+            classie.toggle(menuLeft, 'cbp-spmenu-open');
+            disableOther('showLeftPush');
+        };
+
+        function disableOther(button) {
+            if (button !== 'showLeftPush') {
+                classie.toggle(showLeftPush, 'disabled');
+            }
+        }
+    </script>
+    <!--scrolling js
+    <script src="../Scripts/jquery.nicescroll.js"></script>
+    <script src="../Scripts/scripts.js"></script>
+    scrolling js-->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../Scripts/bootstrap.js"> </script>
+</body>
+</html>

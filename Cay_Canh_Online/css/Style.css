@@ -1,0 +1,335 @@
+﻿
+
+/*
+    chỉnh menu
+     */
+
+.danhmuc{
+     background-color:DimGray;
+     height:50px;
+     border-radius:3px;
+     color:white;
+     padding:14px 16px;
+     text-align:center;
+ }
+
+ .drop{
+       
+    background-color:white;
+    margin-top:-10px;
+ }
+ .hpltheloai {
+    color: black;
+  
+    text-decoration:none;
+    display: block;
+    width:360px;
+}
+
+
+#ves-verticalmenu .navbar-nav > li > a {
+  display: block;
+  color: #444;
+  font-size: 13px;
+  padding: 14px 10px 13px 20px;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+}
+#ves-verticalmenu .navbar-nav > li > a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #F7941E;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  -moz-transform-origin: 0 50%;
+  -ms-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+#ves-verticalmenu .navbar-nav > li > a:hover {
+  color: white !important;
+}
+
+
+#ves-verticalmenu .navbar-nav > li > a:hover .caret:after, #ves-verticalmenu .navbar-nav > li > a:active .caret:after, #ves-verticalmenu .navbar-nav > li > a:focus .caret:after {
+  color: white;
+}
+#ves-verticalmenu .navbar-nav > li.last a, #ves-verticalmenu .navbar-nav > li:last-child a {
+  border: 0;
+}
+#ves-verticalmenu .navbar-nav > li:hover a::before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+#ves-verticalmenu .navbar-nav > li:hover > a {
+  color: white;
+}
+
+/*chỉnh hover xoay giỏ hàng*/
+.glyphicon-shopping-cart:hover{
+animation: xoayanhlientuc1 2s linear infinite;
+-moz-animation: xoayanhlientuc1 2s linear infinite;
+-webkit-animation: xoayanhlientuc1 2s linear infinite;
+-o-animation: xoayanhlientuc1 2s linear infinite;
+}
+
+@keyframes xoayanhlientuc1{
+    from {-webkit-transform:rotate(0deg);
+-moz-transform:rotate(0deg);
+-ms-transform:rotate(0deg);
+-o-transform:rotate(0deg);
+transform:rotate(0deg);}
+    to {-webkit-transform:rotate(360deg);
+-moz-transform:rotate(360deg);
+-ms-transform:rotate(360deg);
+-o-transform:rotate(360deg);
+transform:rotate(360deg);}
+}
+/* Hien thi cho Safari and Chrome */
+@-webkit-keyframes xoayanhlientuc1 {
+    from {-webkit-transform:rotate(0deg);
+-moz-transform:rotate(0deg);
+-ms-transform:rotate(0deg);
+-o-transform:rotate(0deg);
+transform:rotate(0deg);}
+    to {-webkit-transform:rotate(360deg);
+-moz-transform:rotate(360deg);
+-ms-transform:rotate(360deg);
+-o-transform:rotate(360deg);
+transform:rotate(360deg);}
+
+/* Hien thi cho Firefox */
+@-moz-keyframes xoayanhlientuc1{
+    from {-webkit-transform:rotate(0deg);
+-moz-transform:rotate(0deg);
+-ms-transform:rotate(0deg);
+-o-transform:rotate(0deg);
+transform:rotate(0deg);}
+    to {-webkit-transform:rotate(360deg);
+-moz-transform:rotate(360deg);
+-ms-transform:rotate(360deg);
+-o-transform:rotate(360deg);
+transform:rotate(360deg);}
+}
+
+/* Hien thi cho Opera */
+@-o-keyframes xoayanhlientuc1{
+    from {-webkit-transform:rotate(0deg);
+-moz-transform:rotate(0deg);
+-ms-transform:rotate(0deg);
+-o-transform:rotate(0deg);
+transform:rotate(0deg);}
+    to {-webkit-transform:rotate(360deg);
+-moz-transform:rotate(360deg);
+-ms-transform:rotate(360deg);
+-o-transform:rotate(360deg);
+transform:rotate(360deg);}
+}
+/*dung chung*/
+.modal-body{
+    background-color:#170757;
+    font-family:Tahoma;
+    color:white;
+}
+.modal-title{
+    font-family:Tahoma;
+    text-align:center;
+    font-weight:bold;
+    color:black;
+}
+.btn btn-default{
+    color:blue;
+    background-color:aqua;
+}
+
+body {
+    margin:0px auto;
+    background-image:url(../Images/backgroud.jpg);
+    
+    }
+#khung{
+   margin:0px 5%;
+    width:80%;
+    height:auto;
+    float:left;
+    background-image:url(../Images/nengo.jpg);
+}
+#trai{
+    width:15%;
+    height:320px;
+    float:left;
+  background-image:url(../Images/menutrai.png);
+    padding:0px,10%;
+}
+#giua{
+    width:68%;
+    float:left;
+    height:auto;
+  margin-left:1%;
+  margin-right:1%;
+}
+#khungnoidung{
+    width:83%;
+    float:left;
+        background-image:url(../Images/menu.jpg );
+    
+    background-repeat:no-repeat;
+    height:auto;
+  margin-left:1%;
+  margin-right:1%;
+}
+#phai{
+    width:15%;
+    height:320px;
+    float:right;
+    background-image:url(../Images/menuphai.png);
+}
+
+#thanhmenu{
+    width:100%;
+    height:40px;
+     background-image:url(../Images/menu.png);
+    margin-bottom:5px;
+      
+}
+
+/*ucThanhMenu*/
+#thanhtieude ul li {
+        display: inline;
+        list-style-type: none;
+
+}
+.menu{
+  
+    color:white;
+    float:right;
+    text-decoration:none;
+    margin-right:10px;
+    margin-top:10px;
+    
+}
+.timkiem{
+    float:left;
+    margin-top:10px;
+    margin-left:10px;
+    border-radius:10px;
+}
+
+/*ucHeader*/
+header{
+     margin:0px 10%;
+    width:80%;
+    background-image:url(../Images/nen.jpg);
+    height:125px;
+    float:left;
+
+}
+#logo{
+    height:125px;
+    width:auto;
+    float:left;
+}
+
+/*ucSachTheTheLoai*/
+#dmTheLoai
+{
+    height:30%;
+    width:100%;
+}
+
+#tenTL{
+    text-align:center;
+    color:white;
+}
+.hypl{
+    text-decoration:none;
+    text-align:left;
+    color:white;
+    margin-left:30px;
+    margin-right:30px;
+}
+#dm{
+    height:100%;
+    width:100%;
+}
+#dm:hover{
+    background-color:black;
+   
+}
+/*trang chu*/
+.noidung{
+    
+    width:100%;
+    border:1px solid;
+    
+}
+#nd{
+    margin-left:20px;
+    
+}
+/*form dang nhap*/
+
+/*form dang nhap*/
+.frmdangnhap{
+    background-color:snow;
+    border-radius:5px;
+    margin:10px, 30%;
+    width:50%;
+}
+.Gv{
+    width:100%;
+    text-align:center;
+}
+
+#tooltip{
+    display:none;
+    text-align:center;
+    border-radius:3px;
+    width:270px;
+    margin-left:15px;
+    margin-top:320px;
+}
+#show{
+    width:270px;
+}
+#tool:hover #tooltip{
+    display:block;
+    position:absolute;
+    background-color:white;
+}
+.tensp{
+    text-decoration:none;
+    color:blue;
+}
+.hinhsp{
+    margin-left:15px;
+}
+.phantrang{
+    color:white;
+}
+#footer{
+    float:left;
+    width:100%;
+}
